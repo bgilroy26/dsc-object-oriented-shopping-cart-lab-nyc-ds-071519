@@ -39,4 +39,10 @@ class ShoppingCart:
         if len(self.items) == 0:
             return "There are no items in your cart!"
         last_item = self.items.pop()
-        self.total -= last_item[0].price*last_item[1]
+        self.total -= last_item[0].price
+        if last_item[1] != 1:
+            last_item[1] -= 1
+            self.items.append(last_item)
+
+        
+        
